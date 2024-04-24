@@ -32,13 +32,15 @@ class CategoryComponent extends Component
             'name.required' => 'El nombre de la categoria es requerido',
             'name.min' => 'El nombre de la categoria debe tener al menos 5 caracteres',
             'name.max' => 'El nombre de la categoria debe tener maximo 255 caracteres',
-            'name.unique' => 'El nombre de la categoria ya existe'
+            'name.unique' => 'El nombre de la categoria ya existe. Por favor ingrese otro nombre.'
         ];
         $this->validate($rules, $messages);
-        $category = new Category();
-        $category->name = $this->name;
-        $category->save();
-        $this->dispatch('close-modal');
+
+        $category = new Category();//guardar la informacion despues de validar;
+        $category->name =  strtoupper($this->name); //convertir a mayusculas
+        $category->save(); //guardar en la base de datos
+
+        $this->dispatch('close-modal'); //preparar para cerrar el modal
     }
 
 }

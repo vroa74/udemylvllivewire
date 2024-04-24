@@ -44,11 +44,13 @@
 
 <!-- REQUIRED SCRIPTS -->
 @include("components.layouts.partial.scripts")
+<!--  -->
 <script>
     document.addEventListener('livewire:init', ()=> {
-        livewire.on('closeModal', () => {
+        livewire.on('close-modal', () => {
             $('#exampleModal').modal('hide');
         });
     });
+   </script>
 </body>
 </html>

@@ -36,8 +36,7 @@
                     <strong>{{$message}}</strong>
                 </div>
             @enderror
-
-            <button  class="btn bg-green-600 text-white  float-right">Guardar </button>
+            <button  class="btn btn-info  float-right" >Guardar  </button>
         </form>
 
     </x-modal>
